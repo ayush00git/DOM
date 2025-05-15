@@ -63,3 +63,31 @@ console.log(evenDivs[0].previousElementSibling)
 console.log(evenDivs[2].nextElementSibling)
 console.log(evenDivs[3].previousElementSibling)
 console.log(evenDivs[1].nextElementSibling.nextElementSibling.nextElementSibling)
+
+// let's create the view2 same as view1
+
+view1.style.display = "none"
+view2.lastElementChild.remove()
+view2.style.flexDirection = "row"
+view2.style.flexWrap = "wrap"
+view2.style.margin = "10px"
+view2.style.backgroundColor = "white"
+
+
+const createDiv = (parent, iter) => {
+    const newDiv = document.createElement("div")
+    newDiv.style.width = "100px"
+    newDiv.style.height = "100px"
+    newDiv.style.backgroundColor = "black"
+    newDiv.textContent = iter
+    newDiv.style.display = "flex"
+    newDiv.style.justifyContent = "center"
+    newDiv.style.alignItems = "center"
+    newDiv.style.margin = "10px"
+
+    parent.append(newDiv)
+}
+
+for(let i = 1; i <= 12; i++){
+    createDiv(view2, i)
+}
